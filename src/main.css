@@ -32,7 +32,7 @@ body {
   margin-bottom: 30px;
 }
 
-#label-pager {
+#paginator {
   font-size: x-large;
   font-family: "Pokemon Solid", sans-serif;
   margin: auto;
@@ -40,8 +40,12 @@ body {
 
 .pokemons-container {
   display: grid;
-  gap: 1rem;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
   place-items: center center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card {
@@ -52,40 +56,40 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  box-shadow: 0 0 0 100px inset, 0 0 5px grey;
-  transition: box-shadow 1s;
-  cursor: pointer;
   float: left;
-  background-size: 100%;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
 }
 
-.card::after {
-  width: 80%;
-  height: 60%;
-  display: block;
-  white-space: pre;
-  font: 15pt "Pokemon Solid", sans-serif;
-  color: white;
-  border: 2px solid;
-  text-align: center;
-  /* center content using flex box */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* hover out transition */
-  transition: opacity 1s 0.5s;
+.pokemon {
+  width: 130px;
+  height: 130px;
 }
 
-.card:hover::after {
+#pokemon-name {
+  font-family: "Pokemon Solid", sans-serif;
+  font-size: 20px;
+}
+
+.overlay {
+  position: absolute;
+  height: 130px;
+  width: 130px;
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: 0.5s ease;
+  background-color: #fa4e4e;
+}
+
+.card:hover .overlay {
+  opacity: 1;
 }
 
 .card:hover {
-  box-shadow: 0 0 0 5px inset, 0 0 5px grey, 0 0 10px grey inset;
-  transition: box-shadow 1s;
+  transform: scale(1.05);
 }
 
-.card::after {
-  content: "Nombre";
+#next a,
+#previous a {
+  color: #fa4e4e;
 }
