@@ -46,13 +46,14 @@ function createCard(responseJSON)
     {
         numberId.textContent = '#0' + responseJSON.id
     }
-    else if (responseJSON.id >= 100)
-    {
-        numberId.textContent = '#' + responseJSON.id
-    }
     else {
         numberId.textContent = '#00' + responseJSON.id
     }
+    if (responseJSON.id >= 100)
+    {
+        numberId.textContent = '#' + responseJSON.id
+    }
+
 
     title.textContent = name
     title.id = 'pokemon-name'
