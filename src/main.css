@@ -1,6 +1,6 @@
 header {
   background-color: rgb(255, 55, 55);
-  height: 210px;
+  height: 130px;
   text-align: center;
 }
 html,
@@ -10,8 +10,8 @@ body {
 }
 
 #logo {
-  transform: scale(1.5);
-  margin-top: 3cm;
+  transform: scale(1);
+  margin-top: 1cm;
 }
 body {
   background-image: url(../src/img/body2.jpg);
@@ -19,4 +19,67 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+.center {
+  text-align: center;
+  padding: 50px;
+}
+
+#pager {
+  margin-top: 30px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+#label-pager {
+  font-size: x-large;
+  font-family: "Pokemon Solid", sans-serif;
+  margin: auto;
+}
+
+.pokemons-container {
+  display: grid;
+  gap: 1rem;
+  place-items: center center;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 0 100px inset, 0 0 5px grey;
+  transition: box-shadow 1s;
+  cursor: pointer;
+  float: left;
+}
+
+.card::after {
+  width: 80%;
+  height: 50%;
+  display: block;
+  white-space: pre;
+  font: 15pt "Pokemon Solid", sans-serif;
+  color: white;
+  border: 2px solid;
+  text-align: center;
+  /* center content using flex box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* hover out transition */
+  transition: opacity 1s 0.5s;
+}
+
+.card:hover::after {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.card::after {
+  content: "Nombre";
 }
