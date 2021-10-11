@@ -1,0 +1,22 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "Pokedex",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gfrassetti/pokedex.git"
+  },
+  "author": "Guido Frassetti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gfrassetti/pokedex/issues"
+  },
+  "homepage": "https://github.com/gfrassetti/pokedex#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}
