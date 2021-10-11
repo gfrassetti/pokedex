@@ -97,6 +97,8 @@ body {
 #github {
   margin-left: 50%;
   display: inline-block;
+  text-align: center;
+  justify-content: center;
 }
 
 #github :hover {
