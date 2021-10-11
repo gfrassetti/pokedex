@@ -40,12 +40,12 @@ body {
 
 .pokemons-container {
   display: grid;
-  gap: 30px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(6, 1fr);
   place-items: center center;
-  width: 80%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
+  grid-gap: 2rem;
 }
 
 .card {
@@ -92,4 +92,13 @@ body {
 #next a,
 #previous a {
   color: #fa4e4e;
+}
+
+#github {
+  margin-left: 50%;
+  display: inline-block;
+}
+
+#github :hover {
+  transform: scale(1.2);
 }

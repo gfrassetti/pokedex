@@ -3,7 +3,7 @@ const cards = $('.card');
 const nextPage = $('#next')
 const previousPage = $('#previous')
 let offset = 1;
-let limit = 8;
+let limit = 23;
 
 previousPage.on('click', () => {
     if (offset != 1)
