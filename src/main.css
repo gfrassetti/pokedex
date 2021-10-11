@@ -45,8 +45,8 @@ body {
 }
 
 .card {
-  width: 200px;
-  height: 200px;
+  width: 130px;
+  height: 130px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,11 +56,12 @@ body {
   transition: box-shadow 1s;
   cursor: pointer;
   float: left;
+  background-size: 100%;
 }
 
 .card::after {
   width: 80%;
-  height: 50%;
+  height: 60%;
   display: block;
   white-space: pre;
   font: 15pt "Pokemon Solid", sans-serif;
@@ -78,6 +79,11 @@ body {
 .card:hover::after {
   opacity: 0;
   transition: opacity 0.5s;
+}
+
+.card:hover {
+  box-shadow: 0 0 0 5px inset, 0 0 5px grey, 0 0 10px grey inset;
+  transition: box-shadow 1s;
 }
 
 .card::after {
