@@ -94,9 +94,7 @@ body {
   color: #fa4e4e;
 }
 
-#github {
-  text-align: center;
-  margin-top: 30px;
+.github {
   margin-left: 50%;
   display: inline-block;
 }
