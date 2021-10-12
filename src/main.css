@@ -60,6 +60,7 @@ body {
   padding: 10px;
   cursor: pointer;
   box-shadow: 0 3px 16px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+  transition: opacity 0.5s;
 }
 
 .pokemon {
@@ -131,4 +132,25 @@ body {
   position: absolute;
   left: 220px;
   top: 50px;
+}
+
+.oculto {
+  display: none;
+}
+
+.blur {
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+}
+
+.pokemons-container:hover .card:not(:hover) {
+  transform: translateY(3px);
 }

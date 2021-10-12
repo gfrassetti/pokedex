@@ -23,10 +23,19 @@ nextPage.on('click', () => {
 })
 
 searchBtn.on('click', () => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${searchInput.val()}`)
-        .then(response => response.json())
+    fetch(`https://pokeapi.co/api/v2/pokemon/${searchInput.val().toLocaleLowerCase()}`)
+        .then(response => {
+            if (response.status === 404)
+            {
+                alert("This pokemon is not available")    
+            }
+            else {
+                return response.json()
+            }
+        })
         .then(responseJSON => {
-        searchPokemon(responseJSON);           
+            searchPokemon(responseJSON)
+            console.log(responseJSON)
         })
         .catch(error => console.error("Fallo", error))
 })
@@ -93,3 +102,9 @@ function removeCards(parent)
 }
 
 fetchPokemons(offset, limit)
+
+function searchPokemon(responseJSON)
+{
+
+    body.className = 'blur'
+}
