@@ -116,8 +116,10 @@ function searchPokemon(responseJSON)
     const div = document.createElement('div');
     const card = document.createElement('div');
     const title = document.createElement('h3');
+    const ab = document.createElement('h5');
+    ab.textContent = responseJSON.ability.
+    console.log(ab)
     title.className = 'name-searched'
-    title.setAttribute.to
     const img = document.createElement('img');
     card.className = 'new-card'
     img.id = 'searched-img'
@@ -130,5 +132,6 @@ function searchPokemon(responseJSON)
     div.append(card)
     card.append(img)
     card.append(title)
+    card.append(ab)
 }
  
