@@ -1,8 +1,9 @@
 const container = document.querySelector('.pokemons-container')
 const cards = $('.card');
-const nextPage = $('#next')
-const previousPage = $('#previous')
-const searchInput = $('#search-input')
+const nextPage = $('#next');
+const previousPage = $('#previous');
+const searchInput = $('#search-input');
+const searchBtn = $('#search-btn');
 let offset = 1;
 let limit = 23;
 
@@ -11,14 +12,23 @@ previousPage.on('click', () => {
     {
         offset -= 24;
         removeCards(container);
-        fetchPokemons(offset, limit)  
+        fetchPokemons(offset, limit);
     }
 })
 
 nextPage.on('click', () => {
     offset += 24;
     removeCards(container);
-    fetchPokemons(offset, limit)
+    fetchPokemons(offset, limit);
+})
+
+searchBtn.on('click', () => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${searchInput.val()}`)
+        .then(response => response.json())
+        .then(responseJSON => {
+        searchPokemon(responseJSON);           
+        })
+        .catch(error => console.error("Fallo", error))
 })
 
 function fetchPokemon(id) {
@@ -27,12 +37,13 @@ function fetchPokemon(id) {
         .then(responseJSON => {
             createCard(responseJSON)
         })
+        .catch(error => console.error("Fallo", error))
 }
 
 function fetchPokemons(offset, limit){
     for (let i = offset; i <= offset + limit; i++)
     {
-        fetchPokemon(i)  
+        fetchPokemon(i);
     }
 }
 
