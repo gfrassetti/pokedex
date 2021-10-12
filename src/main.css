@@ -98,11 +98,11 @@ body {
   text-align: center;
 }
 
-.github :hover {
+#github-link :hover {
   transform: scale(1.2);
 }
 
-#github-a {
+#github-lottie {
   display: block;
   margin-left: auto;
   margin-right: auto;
