@@ -27,15 +27,15 @@ body {
 }
 
 #pager {
-  margin-top: 30px;
-  margin: 0 auto;
   margin-bottom: 30px;
+  place-content: center;
+  justify-content: center;
+  position: relative;
 }
 
 #paginator {
   font-size: x-large;
   font-family: "Pokemon Solid", sans-serif;
-  margin: auto;
 }
 
 .pokemons-container {
@@ -96,6 +96,7 @@ body {
 
 .github {
   text-align: center;
+  margin-top: 40px;
 }
 
 #github-link :hover {
@@ -112,4 +113,22 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+#search-label {
+  font-family: "Pokemon Solid", sans-serif;
+  color: #fa4e4e;
+  font-size: 30px;
+}
+
+#search {
+  left: 80%;
+  position: absolute;
+  bottom: 1%;
+}
+
+#search-btn {
+  position: absolute;
+  left: 220px;
+  top: 50px;
 }

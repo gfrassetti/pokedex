@@ -2,20 +2,21 @@ const container = document.querySelector('.pokemons-container')
 const cards = $('.card');
 const nextPage = $('#next')
 const previousPage = $('#previous')
+const searchInput = $('#search-input')
 let offset = 1;
 let limit = 23;
 
 previousPage.on('click', () => {
     if (offset != 1)
     {
-        offset -= 9;
+        offset -= 24;
         removeCards(container);
         fetchPokemons(offset, limit)  
     }
 })
 
 nextPage.on('click', () => {
-    offset += 9;
+    offset += 24;
     removeCards(container);
     fetchPokemons(offset, limit)
 })
