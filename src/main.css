@@ -20,6 +20,8 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  text-align: center;
+  justify-content: center;
 }
 
 .center {
@@ -80,7 +82,7 @@ body {
   width: 130px;
   opacity: 0;
   transition: 0.5s ease;
-  background-color: #fa4e4e;
+  background-color: #ffffff;
 }
 
 .card:hover .overlay {
@@ -142,10 +144,7 @@ body {
 .blur {
   /* Add the blur effect */
   filter: blur(8px);
-  -webkit-filter: blur(8px);
-
-  /* Full height */
-  height: 100%;
+  pointer-events: none;
 }
 
 .card:hover {
@@ -154,4 +153,34 @@ body {
 
 .pokemons-container:hover .card:not(:hover) {
   transform: translateY(3px);
+}
+
+.new {
+  background: rgba(0, 0, 0, 0.5);
+  height: 810.45px;
+}
+
+.new-card {
+  background: rgba(255, 255, 255, 0.5);
+  height: 700px;
+  width: 680px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  top: 40px;
+  text-align: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+#searched-img {
+  position: relative;
+  margin-top: 30px;
+  height: 280px;
+  width: 280px;
+}
+
+.name-searched {
+  font-family: "Pokemon Solid", sans-serif;
+  font-size: 40px;
 }

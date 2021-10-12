@@ -1,5 +1,5 @@
-const container = document.querySelector('.pokemons-container')
-const cards = $('.card');
+const container = document.querySelector('.pokemons-container');
+const body = document.querySelector('body')
 const nextPage = $('#next');
 const previousPage = $('#previous');
 const searchInput = $('#search-input');
@@ -25,17 +25,21 @@ nextPage.on('click', () => {
 searchBtn.on('click', () => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${searchInput.val().toLocaleLowerCase()}`)
         .then(response => {
-            if (response.status === 404)
+            if (response.status === 404 || searchInput.val() === "")
             {
-                alert("This pokemon is not available")    
+                alert("This pokemon is not available")
+                
             }
             else {
                 return response.json()
             }
         })
         .then(responseJSON => {
-            searchPokemon(responseJSON)
-            console.log(responseJSON)
+            if (responseJSON != null) {
+                searchPokemon(responseJSON)
+                console.log(responseJSON)
+            }
+
         })
         .catch(error => console.error("Fallo", error))
 })
@@ -45,6 +49,7 @@ function fetchPokemon(id) {
         .then(response => response.json())
         .then(responseJSON => {
             createCard(responseJSON)
+            console.log(responseJSON.id)
         })
         .catch(error => console.error("Fallo", error))
 }
@@ -105,6 +110,25 @@ fetchPokemons(offset, limit)
 
 function searchPokemon(responseJSON)
 {
+    container.className = 'oculto'
+    $('.github').toggleClass('oculto')
+    document.querySelector('#pager').className = 'oculto'
+    const div = document.createElement('div');
+    const card = document.createElement('div');
+    const title = document.createElement('h3');
+    title.className = 'name-searched'
+    title.setAttribute.to
+    const img = document.createElement('img');
+    card.className = 'new-card'
+    img.id = 'searched-img'
+    div.className = 'new'
+    title.textContent = responseJSON.name
+    div.id = responseJSON.name
+    img.src = `${responseJSON.sprites.other.dream_world.front_default}`
 
-    body.className = 'blur'
+    body.append(div)
+    div.append(card)
+    card.append(img)
+    card.append(title)
 }
+ 
