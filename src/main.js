@@ -135,7 +135,7 @@ function searchPokemon(responseJSON)
 {
     //Encuentra estas variables en el response y las almacena en el const
     const { abilities, types, height, weight, stats } = responseJSON;
-    console.log(types)
+    console.log(types[0].type.name);
     container.classList.add('oculto');
     $('.github').addClass('oculto')
     pager.className = 'oculto';
@@ -258,11 +258,21 @@ function searchPokemon(responseJSON)
 
     });
 
-    function cardColor()
-    {
-        types.forEach(type =>{
+    cardColor(card)
 
-        })
+    function cardColor(card)
+    {
+        const keys = Object.keys(typeColors);
+        console.log(typeColors[types[0].type.name]);
+        for (let i = 1; i < keys.length; i++)
+        {
+            if (types[0].type.name === keys[i])
+            {
+                card.style.background = typeColors[types[0].type.name];
+            }
+            
+        }
+        
     }
 }
 
