@@ -67,7 +67,7 @@ body {
 }
 
 .pokemon {
-  width: 130px;
+  width: 140px;
   height: 130px;
 }
 
@@ -157,27 +157,25 @@ body {
 
 .new {
   background: rgba(0, 0, 0, 0.5);
-  height: 810.45px;
+  height: 840.45px;
 }
 
 .new-card {
   background: rgba(255, 255, 255, 0.5);
-  height: 700px;
+  height: 800px;
   width: 680px;
   margin: 0 auto;
   position: relative;
+  top: 20px;
   text-align: center;
-  top: 40px;
-  text-align: center;
-  align-items: center;
   border-radius: 20px;
 }
 
 #searched-img {
   position: relative;
   margin-top: 10px;
-  height: 280px;
-  width: 280px;
+  height: 200px;
+  width: 200px;
 }
 
 .name-searched {
@@ -188,4 +186,39 @@ body {
 .type {
   margin: 20px;
   bottom: auto;
+  font-family: FreeMono, monospace;
+}
+
+.pokemon-abl {
+  font-family: FreeMono, monospace;
+  font-size: larger;
+}
+
+.div-abilities {
+  position: relative;
+  right: 40px;
+}
+
+.search-title {
+  font-family: Apple Chancery, cursive;
+  font-size: 30px;
+}
+
+.bar {
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+.name-stat {
+  position: absolute;
+  left: 14%;
+  font-family: FreeMono, monospace;
+}
+
+.close-card {
+  position: relative;
+  float: right;
+  margin: 10px;
+  cursor: pointer;
 }
