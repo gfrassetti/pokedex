@@ -49,7 +49,6 @@ function fetchPokemon(id) {
         .then(response => response.json())
         .then(responseJSON => {
             createCard(responseJSON)
-            console.log(responseJSON.id)
         })
         .catch(error => console.error("Fallo", error))
 }
@@ -110,15 +109,27 @@ fetchPokemons(offset, limit)
 
 function searchPokemon(responseJSON)
 {
+    const {abilities, types} = responseJSON
     container.className = 'oculto'
     $('.github').toggleClass('oculto')
     document.querySelector('#pager').className = 'oculto'
     const div = document.createElement('div');
     const card = document.createElement('div');
     const title = document.createElement('h3');
-    const ab = document.createElement('h5');
-    ab.textContent = responseJSON.ability.
-    console.log(ab)
+    const hr = document.createElement('hr')
+    const typeName = document.createElement('label');
+    const abilityTitle = document.createElement('label')
+
+    abilityTitle.textContent = "sAbilities:"
+    abilityTitle.style.fontFamily = 'Apple Chancery, cursive'
+    abilityTitle.style.fontSize = '30px'
+    abilityTitle.style.marginRight = '30px'
+
+    typeName.textContent = "Type:"
+    typeName.style.fontSize = '30px'
+    typeName.style.fontFamily = 'Apple Chancery, cursive'
+
+
     title.className = 'name-searched'
     const img = document.createElement('img');
     card.className = 'new-card'
@@ -132,6 +143,37 @@ function searchPokemon(responseJSON)
     div.append(card)
     card.append(img)
     card.append(title)
-    card.append(ab)
+    card.append(hr)
+    card.append(typeName)
+
+
+
+ 
+
+    types.forEach(type => {
+        const ab = document.createElement('a');
+        ab.className = 'btn btn-warning type'
+        ab.textContent = type.type.name
+        card.append(ab)
+    })
+    card.append(abilityTitle)
+    const divAbilities = document.createElement('div')
+    card.append(divAbilities)
+    divAbilities.append(abilityTitle)
+
+
+    abilities.forEach(ab => {
+        const p = document.createElement('span');
+        p.textContent = ` ${ab.ability.name}`
+        p.className = 'pokemon-abl'
+        const ul = document.createElement('ul')
+        const li = document.createElement('li')
+        ul.append(li)
+        li.append(p)
+        divAbilities.append(li)
+    })
+    
+
 }
  
+
