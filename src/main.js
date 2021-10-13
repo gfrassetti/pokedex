@@ -77,7 +77,9 @@ function fetchPokemon(id) {
 function fetchPokemons(offset, limit){
     for (let i = offset; i <= offset + limit; i++)
     {
-        fetchPokemon(i);
+        setTimeout(function () {
+            fetchPokemon(i);
+        }, 500);
     }
 }
 
