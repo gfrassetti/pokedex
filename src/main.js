@@ -83,7 +83,8 @@ function createCard(responseJSON)
 
     title.textContent = name
     title.id = 'pokemon-name'
-    overlay.className = 'overlay'
+    overlay.className = 'overlay';
+    overlay.id = responseJSON.name;
     const img = document.createElement('img');
     img.className = 'pokemon'
     div.className = 'card'
@@ -97,7 +98,7 @@ function createCard(responseJSON)
     overlay.append(title)
     overlay.append(numberId)
 
-    div.addEventListener('click', selectCard);
+    div.addEventListener('click', selectCard)
 
 }
 
@@ -234,7 +235,7 @@ function searchPokemon(responseJSON)
         pager.className = 'row';
         searchInput.val("");
 
-    });   
+    });
 
 
 }
@@ -243,8 +244,12 @@ function selectCard(e)
 {
     const $card = e.target;
     console.log($card);
-}
-
+    fetch(`https://pokeapi.co/api/v2/pokemon/${$card.id}`)
+        .then(response => response.json())
+        .then(responseJSON =>{
+            searchPokemon(responseJSON);
+        })
+}    
 
 
 
