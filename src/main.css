@@ -161,6 +161,7 @@ body {
 }
 
 .new-card {
+  background: rgba(255, 255, 255, 0.5);
   height: 800px;
   width: 680px;
   margin: 0 auto;
