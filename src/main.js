@@ -97,6 +97,8 @@ function createCard(responseJSON)
     overlay.append(title)
     overlay.append(numberId)
 
+    div.addEventListener('click', selectCard);
+
 }
 
 function removeCards(parent)
@@ -237,6 +239,11 @@ function searchPokemon(responseJSON)
 
 }
 
+function selectCard(e)
+{
+    const $card = e.target;
+    console.log($card);
+}
 
 
 
