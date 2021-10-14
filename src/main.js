@@ -77,9 +77,7 @@ function fetchPokemon(id) {
 function fetchPokemons(offset, limit){
     for (let i = offset; i <= offset + limit; i++)
     {
-        setTimeout(function () {
-            fetchPokemon(i);
-        }, 500);
+        fetchPokemon(i);
     }
 }
 
@@ -180,12 +178,13 @@ function searchPokemon(responseJSON)
     card.append(typeName);
 
     //type:
+    const typeBtn = document.createElement('button');
     types.forEach(type => {
-        const ab = document.createElement('a');
-        ab.className = 'btn btn-warning type';
-        ab.textContent = type.type.name;
-        card.append(ab);
+        typeBtn.className = 'btn btn-light type';
+        typeBtn.textContent = type.type.name;
+        card.append(typeBtn);
     });
+
     //abilities:
     card.append(abilityTitle)
     const divAbilities = document.createElement('div')
@@ -260,7 +259,6 @@ function searchPokemon(responseJSON)
 
     });
 
-    cardColor(card)
 
     function cardColor(card)
     {
@@ -277,6 +275,23 @@ function searchPokemon(responseJSON)
         }
         
     }
+
+    function typeColor(typeBtn)
+    {
+        const keys = Object.keys(typeColors);
+        for (let i = 0; i < keys.length; i++)
+        {
+            if (types[0].type.name === keys[i])
+            {
+                console.log(keys[i]);
+                typeBtn.style.color = typeColors[types[0].type.name];
+            }
+            
+        }
+    }
+    cardColor(card);
+    typeColor(typeBtn);
+
 }
 
 function selectCard(e)
