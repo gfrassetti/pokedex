@@ -54,8 +54,7 @@ body {
 .card {
   width: 130px;
   height: 130px;
-  display: flex;
-  flex-direction: column;
+
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -81,16 +80,12 @@ body {
   height: 130px;
   width: 130px;
   opacity: 0;
-  transition: 0.5s ease;
+  transition: 0.3s ease;
   background-color: #ffffff;
 }
 
 .card:hover .overlay {
   opacity: 1;
-}
-
-.card:hover {
-  transform: scale(1.05);
 }
 
 #next a,

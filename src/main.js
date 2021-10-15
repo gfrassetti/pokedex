@@ -259,7 +259,6 @@ function searchPokemon(responseJSON)
 
     });
 
-
     function cardColor(card)
     {
         const keys = Object.keys(typeColors);
@@ -275,22 +274,7 @@ function searchPokemon(responseJSON)
         }
         
     }
-
-    function typeColor(typeBtn)
-    {
-        const keys = Object.keys(typeColors);
-        for (let i = 0; i < keys.length; i++)
-        {
-            if (types[0].type.name === keys[i])
-            {
-                console.log(keys[i]);
-                typeBtn.style.color = typeColors[types[0].type.name];
-            }
-            
-        }
-    }
     cardColor(card);
-    typeColor(typeBtn);
 
 }
 
