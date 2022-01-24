@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Pokedex</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <link rel="stylesheet" media="screen" href="./src/main.css" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -14,14 +17,17 @@
       crossorigin="anonymous"
     />
     <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet" />
+    <link rel="stylesheet" media="screen" href="./src/main.css" />
   </head>
   <body>
     <header>
-      <img src="./src/img/logo.png" id="logo" />
-      <a href="https://gfrassetti.github.io/pokedex/"></a>
+      <div class="logo-container">
+        <img src="./src/img/logo.png" id="logo" />
+        <a href="https://gfrassetti.github.io/pokedex/"></a>
+      </div>
     </header>
     <div class="container-fluid center">
-      <div class="row" id="pager">
+      <div class="pager">
         <nav aria-label="..." id="paginator">
           <ul class="pagination">
             <li id="previous" class="page-item disabled">
@@ -33,27 +39,44 @@
             </li> 
             !-->
             <li id="next" class="page-item">
-              <a  class="page-link" href="#">Next</a>
+              <a class="page-link" href="#">Next</a>
             </li>
           </ul>
         </nav>
-        <div id="search">
-          <label id="search-label">Search:</label>
-          <button class="btn btn-danger" type="submit" id="search-btn">Search</button>
-          <input class="form-control" type="text" id="search-input" placeholder="Insert pokemon name or ID">
-
-        </div>
       </div>
-      <div class="pokemons-container">
-      </div>
+      <div class="search">
+        <label id="search-label">Search:</label>
+        <input
+          class="form-control"
+          type="text"
+          id="search-input"
+          placeholder="Insert pokemon name or ID"
+        />
+        <button class="btn btn-danger" type="submit" id="search-btn">
+          Search
+        </button>
       </div>
     </div>
+    <div class="pokemons-container col-12"></div>
     <div class="github">
-      <a id="github-link" href="https://github.com/gfrassetti/pokedex" target="_blank">
-      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-      <lottie-player id="github-lottie" src="https://assets8.lottiefiles.com/packages/lf20_6HFXXE.json"  background="transparent"  speed="4"  style="width: 40px; height: 40px;" hover loop autoplay ></lottie-player>
+      <a
+        id="github-link"
+        href="https://github.com/gfrassetti/pokedex"
+        target="_blank"
+      >
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player
+          id="github-lottie"
+          src="https://assets8.lottiefiles.com/packages/lf20_6HFXXE.json"
+          background="transparent"
+          speed="4"
+          style="width: 40px; height: 40px"
+          hover
+          loop
+          autoplay
+        ></lottie-player>
       </a>
-  </div>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

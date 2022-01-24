@@ -1,7 +1,8 @@
 header {
   background-color: rgb(255, 55, 55);
-  height: 130px;
+  height: 91px;
   text-align: center;
+  width: 100%;
 }
 html,
 body {
@@ -9,10 +10,8 @@ body {
   margin: 0px;
 }
 
-#logo {
-  transform: scale(1);
-  margin-top: 1cm;
-  cursor: pointer;
+.logo-container {
+  width: auto;
 }
 body {
   background-image: url(../src/img/body2.jpg);
@@ -25,15 +24,9 @@ body {
 }
 
 .center {
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
   padding: 50px;
-}
-
-#pager {
-  margin-bottom: 30px;
-  place-content: center;
-  justify-content: center;
-  position: relative;
 }
 
 #paginator {
@@ -45,19 +38,52 @@ body {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   place-items: center center;
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   grid-gap: 2rem;
 }
 
+@media screen and (max-width: 880px) {
+  .pokemons-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .pokemons-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+  .center {
+    display: block;
+  }
+  .pagination {
+    justify-content: center;
+  }
+  .card {
+    width: 100% !important;
+  }
+  #logo {
+    width: 90%;
+  }
+  .pokemon {
+    width: 120px !important;
+  }
+  .new-card {
+    width: 90% !important;
+    height: 820px !important;
+  }
+}
+
 .card {
   width: 130px;
   height: 130px;
-
   justify-content: center;
   align-items: center;
-  text-align: center;
   float: left;
   padding: 10px;
   cursor: pointer;
@@ -120,16 +146,13 @@ body {
   font-size: 30px;
 }
 
-#search {
-  left: 80%;
-  position: absolute;
-  bottom: 1%;
+.search {
+  display: flex;
+  align-items: center;
 }
 
 #search-btn {
-  position: absolute;
-  left: 220px;
-  top: 50px;
+  margin-left: 5px;
 }
 
 .oculto {
